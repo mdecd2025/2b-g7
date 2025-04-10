@@ -2,6 +2,7 @@
         <head>
         <title>cdproject</title>
         <meta charset="utf-8">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -95,6 +96,7 @@ img.add_border {
 </head>
 <body>
 <div class='container'><nav>
+        
     <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -140,4 +142,65 @@ img.add_border {
           </div>
           
         </header>
-    </nav><section><h1>SMap</h1><div id="tipue_search_content"></div><ul><li><a href='About.html'>About</a><li><a href='Team list.html'>Team list</a><li><a href='Tasks.html'>Tasks</a><ul><li><a href='Tasks1.html'>Tasks1</a><li><a href='Tasks2.html'>Tasks2</a><ul><li><a href='w3.html'>w3</a></li></ul><li><a href='Tasks3.html'>Tasks3</a><li><a href='Tasks4.html'>Tasks4</a><ul><li><a href='w4.html'>w4</a></li></ul><li><a href='Tasks5.html'>Tasks5</a><li><a href='Tasks6.html'>Tasks6</a></li></ul><li><a href='Final.html'>Final</a><li><a href='Brython.html'>Brython</a></li></ul></section></div></body></html>
+    <div id="tipue_search_content">Tasks4 << <a href='Tasks4.html'>Previous</a> <a href='Tasks5.html'>Next</a> >> Tasks5<br /><h1>w4</h1>
+<p><strong>建造平面四連桿的尺寸設計: 固定桿長度為 1m, 主動旋轉桿長度為 0.4m, 第二旋轉桿長度為 0.6m, 第三旋轉桿長度為 0.9m</strong></p>
+<p>1.建立robot群組</p>
+<p>2.robot下的children建立1個solid群組，2個higejoint群組，並選一個為首要，命名為joint1</p>
+<p>3.solid的children中建立shape作為固定桿(X1,Y0.1,Z0.1)</p>
+<p>4.<span>joint1下的endpoint選擇solid性質，命名為link1，並往下的children中建立pose及higejoint，pose下在建立shape為主動桿(0.4,0.1,0.1)</span><span>，shape命名為link1，再將主動桿所屬的pose的translation設為(0.2,0,0)(此為link1中心點)，而higejoint為主動桿與第二桿連接，並命名為joint2。</span></p>
+<p><span>5.joint1的endpoint下有translation(此為連接處的座標點)，設(-0.5,0,0.1)</span></p>
+<p><span>6.在joint1下有boundingObject，選擇pose，往下children選擇USE link1，並調整座標至(0.2,0,0)(與link1的pose座標一致)，在設置physics</span></p>
+<p>7.以上順序重複製作，主要為base--&gt;joint1--&gt;link1--&gt;<span>joint2--&gt;link2--&gt;</span><span>joint3--&gt;link3--&gt;joint4</span></p>
+<p><span>8.joint4在robot群組中的children，與joint1同排列，並將endpoint設為solidreference，並選為use link3</span></p>
+<p><span>9.每一階的joint中各有jointparameters、device、emdpoint，其中link1上的device要加入Rotationalmotor，並命名為motor</span></p>
+<p><span>10.而每一階的jointparameters，axis設為(0,0,1)(意為繞z軸旋轉)，但anchor要設為桿的長度，這樣才是joint到joint的距離，分別為(-0.5,0,0)、(0.4,0,0)、(0.6,0,0)，此座標是接續的，原點根據base的起點，另外設置的joint4則為(0.5,0,0)</span></p><br />Tasks4 << <a href='Tasks4.html'>Previous</a> <a href='Tasks5.html'>Next</a> >> Tasks5</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
